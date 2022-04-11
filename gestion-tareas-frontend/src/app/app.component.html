@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+   <head>
+      <meta charset="utf-8">
+      <title>Inicio</title>
+      <!--Custom styles-->
+      <link rel="stylesheet" href="/css/inicio.css">
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+         <a class="single_logo" href="https://nextia.mx/" style="background-color:rgba(244, 246, 247);">
+	        <img width="150" height="52" src="https://nextia.mx/wp-content/uploads/2021/02/nextia_azul.png" class="attachment-full size-full" alt="" loading="lazy" data-pagespeed-url-hash="1997524353" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+	     </a>
+         <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+               <li class="nav-item active">
+                  <a href="#" class="nav-link">Home</a>
+               </li>
+               <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navdrop" role="button" data-toggle="dropdown" data-hover="dropdown">Services</a>
+                  <div class="dropdown-menu" aria-labelledby="navdrop">
+                      <a href="#" class="dropdown-item">Service1</a>
+                      <a href="#" class="dropdown-item">Service2</a>
+                      <a href="#" class="dropdown-item">Service3</a>
+                  </div>
+                  </li> -->
+               <li class="nav-item">
+                  <a href="/logout" class="nav-link">Cerrar Sesión</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <div class="container">
+         <h1>Gestión de Tareas</h1>
+         <h4>
+            Bienvenido <span sec:authentication="principal.username"></span>
+         </h4>
+         <br>
+         <app-lista-tareas></app-lista-tareas>
+      </div>
+      <!--Custom JS-->
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+         crossorigin="anonymous"></script>
+   </body>
+</html>
