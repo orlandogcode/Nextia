@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registro</title>
+<!--Bootsrap 4 CDN-->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<!--Fontawesome CDN-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	crossorigin="anonymous">
+<!--Custom styles-->
+<link rel="stylesheet" href="/css/signin.css">
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+					<div class="logo">
+						<a class="single_logo" href="https://nextia.mx/"
+							style="background-color: rgba(255, 195, 0, 0.5);"> <img
+							width="150" height="52"
+							src="https://nextia.mx/wp-content/uploads/2021/02/nextia_azul.png"
+							class="attachment-full size-full" alt="" loading="lazy"
+							data-pagespeed-url-hash="1997524353"
+							onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+						</a>
+					</div>
+					<h3>Regístrate</h3>
+				</div>
+				<div class="card-body">
+					<form th:action="@{/registro}" method="post" th:object="${usuario}"
+						name="formularioRegistro">
+						<div th:if=${param.exito}>
+							<div class="alert alert-info">Se ha registrado
+								exitosamente!!</div>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input id="nombre" name="nombre" type="text" class="form-control"
+								placeholder="Nombre">
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input id="apellido" name="apellido" type="text"
+								class="form-control" placeholder="Apellido">
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input id="email" name="email" type="text" class="form-control"
+								placeholder="Email">
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input id="password" name="password" type="password"
+								class="form-control" placeholder="Password">
+						</div>
+					</form>
+					<div class="card-footer">
+						<div class="d-flex justify-content-center links">
+							<button id="btnRegistrar" value="Registrar"
+								class="btn  btn-block ingresar_registrar_btn">Registrar</button>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="d-flex justify-content-center links">
+							Si ya estas registrado <a href="/login">inicia sesión aqui</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Custom JS-->
+		<script src="/js/registrar.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+         crossorigin="anonymous"></script> -->
+</body>
+</html>
