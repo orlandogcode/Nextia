@@ -27,6 +27,16 @@ export class ListaTareasComponent implements OnInit {
   editarTarea(id: number) {
     this.router.navigate(['editar-tarea', id]);
   }
+
+  eliminarTarea(id: number) {
+    this.tareaServicio.eliminarTarea(id).subscribe(
+      dato => {
+        console.log(dato);
+        this.obtenerTareas();
+      }
+    );
+  }
+
   // constructor() { }
 
   // ngOnInit(): void {

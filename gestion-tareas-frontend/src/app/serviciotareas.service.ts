@@ -20,7 +20,15 @@ export class ServiciotareasService {
     return this.httpClient.post(`${this.baseURL}`, tarea);
   }
 
-  atualizarTarea(id:number, tarea: Tareas): Observable<Object> {
+  obtenerTareaPorId(id:number): Observable<Tareas> {
+    return this.httpClient.get<Tareas>(`${this.baseURL}/${id}`);
+  }
+
+  actualizarTarea(id:number, tarea: Tareas): Observable<Object> {
     return this.httpClient.put(`${this.baseURL}/${id}`, tarea);
+  }
+
+  eliminarTarea(id:number) : Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 }
