@@ -8,11 +8,19 @@ import { Tareas } from './tareas';
 })
 export class ServiciotareasService {
 
-  private baseURL = "http://localhost:8080/api/v1/empleados";
+  private baseURL = "http://localhost:8080/api/v1/tareas";
 
-  constructor(private httpClient : HttpClient) { }
-  
-  obtenerListaDeTareas():Observable<Tareas[]>{
+  constructor(private httpClient: HttpClient) { }
+
+  obtenerListaDeTareas(): Observable<Tareas[]> {
     return this.httpClient.get<Tareas[]>(`${this.baseURL}`);
+  }
+
+  registrarTarea(tarea: Tareas): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}`, tarea);
+  }
+
+  atualizarTarea(id:number, tarea: Tareas): Observable<Object> {
+    return this.httpClient.put(`${this.baseURL}/${id}`, tarea);
   }
 }

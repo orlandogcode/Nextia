@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gestion.empleados</groupId>
-	<artifactId>com.seguridad.spring</artifactId>
+	<artifactId>com.nextia.todo</artifactId>
 	<version>1.0</version>
-	<name>gestion-empleados-backend</name>
+	<name>homework-backend</name>
 	<description>Gestion de empleados - Backend</description>
 	<properties>
 		<java.version>1.8</java.version>

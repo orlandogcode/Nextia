@@ -1,13 +1,13 @@
-package com.gestion.empleados;
+package com.nextia.gestion.tareas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GestionEmpleadosBackendApplication {
+public class GestionTareasBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GestionEmpleadosBackendApplication.class, args);
+		SpringApplication.run(GestionTareasBackendApplication.class, args);
 	}
 
 }

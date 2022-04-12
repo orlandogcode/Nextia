@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiciotareasService } from '../serviciotareas.service';
 import { Tareas } from '../tareas';
 
@@ -9,20 +10,23 @@ import { Tareas } from '../tareas';
 })
 export class ListaTareasComponent implements OnInit {
 
-  homework : Tareas[];
+  homework: Tareas[];
 
-  constructor(private tareaServicio:ServiciotareasService) { }
+  constructor(private tareaServicio: ServiciotareasService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerTareas();
   }
 
-  private obtenerTareas(){
+  private obtenerTareas() {
     this.tareaServicio.obtenerListaDeTareas().subscribe(dato => {
       this.homework = dato;
     })
   }
 
+  editarTarea(id: number) {
+    this.router.navigate(['editar-tarea', id]);
+  }
   // constructor() { }
 
   // ngOnInit(): void {

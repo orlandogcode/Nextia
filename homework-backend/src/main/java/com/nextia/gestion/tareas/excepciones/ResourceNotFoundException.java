@@ -1,4 +1,4 @@
-package com.gestion.empleados.excepciones;
+package com.nextia.gestion.tareas.excepciones;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
